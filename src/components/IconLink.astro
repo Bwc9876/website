@@ -22,6 +22,10 @@ const { label, placement, icon, isExternal, overridePack, ...rest } = Astro.prop
   target={isExternal ? "_blank" : null}
   {...rest}
 >
-  <Icon width="1.2em" height="1.2em" name={`${overridePack ?? "bi"}:${icon}`} />
+  <Icon
+    width="1.2em"
+    height="1.2em"
+    name={overridePack === "local" ? icon : `${overridePack ?? "bi"}:${icon}`}
+  />
   {placement === "inside" && label}
 </a>
