@@ -59,6 +59,8 @@ const { project } = Astro.props;
 
   small {
     margin: 0 var(--1);
+    display: block;
+    text-wrap: balance;
   }
 
   h3 {
@@ -77,9 +79,12 @@ const { project } = Astro.props;
     border-radius: 5px;
   }
 
+  a {
+    transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.4s;
+  }
+
   a:hover {
     transform: translateY(calc(var(--1) * -1));
-    transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.4s;
   }
 
   a:hover img {
