@@ -9,7 +9,7 @@ import playformInline from "@playform/inline";
 export default defineConfig({
   site: "https://bwc9876.dev",
   compressHTML: true,
-  integrations: [mdx(), icon(), sitemap(), playformInline()],
+  integrations: [mdx(), icon({ iconDir: "src/assets/icons" }), sitemap(), playformInline()],
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha"

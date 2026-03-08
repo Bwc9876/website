@@ -16,9 +16,15 @@ export interface Props {
 
 const socialData: SocialData = [
   { name: "Resume", icon: "file-earmark-text-fill", link: "/resume.pdf" },
-  { name: "GitHub", icon: "github", link: "https://github.com/Bwc9876" },
+  {
+    name: "Tangled",
+    icon: "dolly",
+    overridePack: "local",
+    link: "https://tangled.org/did:plc:x7tlupbnqot7nu6udnffnv4h"
+  },
   { name: "Bluesky", icon: "bluesky", link: "https://bsky.app/profile/bwc9876.dev" },
-  { name: "PayPal", icon: "paypal", link: "https://paypal.me/bwc9876" }
+  { name: "PayPal", icon: "paypal", link: "https://paypal.me/bwc9876" },
+  { name: "GitHub", icon: "github", link: "https://github.com/Bwc9876" }
 ];
 
 const { labelPlacement, makeLinksUnfocusable, ...rest } = Astro.props;
