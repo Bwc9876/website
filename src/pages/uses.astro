@@ -1,0 +1,272 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ExtLink from "@components/ExtLink.astro";
+---
+
+<Layout title="Uses">
+  <h1><span class="gradient-text">Ben C</span> Uses</h1>
+  <p>
+    Here's a list of stuff I use everyday. While I do like all the stuff I list here, keep in mind
+    I'm not trying to tell you that you should/have to use it as well. I just have a lot of love and
+    appreciation for the tools I use and the people who made them, so I wanted to share that here.
+  </p>
+  <section>
+    <h2>Hardware</h2>
+    I'm a big Valve fan so I like naming my devices after companies in their games.
+    <h3>Framework 13 Laptop (<code>aperture</code>)</h3>
+    <p>
+      My main laptop! I bought the Intel version back in 2023 and still love using it. The internal
+      mic doesn't work and the keyboard is failing a bit but I will use this thing until it doesn't
+      turn on anymore.
+    </p>
+    <h3>Custom built Desktop (<code>black-mesa</code>)</h3>
+    <p>
+      Desktop of theseus I've had for a good while now. Currently has an AMD Ryzen 7 CPU and a AMD
+      Radeon RX 7800 XT GPU. I used it a lot for gaming but I haven't played much recently. Now it
+      acts as a server for silly projects like <a href="/projects/bingus-bot">Bingus</a>.
+    </p>
+    <h3>Raspberry Pi 4 (<code>mann-co</code>)</h3>
+    <p>
+      Rpi I use mostly for testing stuff. I also sometimes plug it in and have it WOL my desktop
+      every minute in case my power goes out 💀.
+    </p>
+    <h3>Pixel 7</h3>
+    <p>
+      Phone I use for phone things. I've been trying to use it less and less. I'm hoping I can
+      install an alternative Android version like GrapheneOS soon-ish. Especially since Google is
+      trying to kill the only cool thing about Android.
+    </p>
+  </section>
+  <section>
+    <h2>Software</h2>
+    Too much software.
+    <h3><ExtLink href="https://nixos.org/">NixOS</ExtLink> (Linux Distro)</h3>
+    <p>
+      I started using NixOS when I started college and never looked back. Having a unified
+      abstraction for configuring my system is a dream come true. All of my configs are public and
+      available <a href="https://tangled.org/bwc9876.dev/nixos-config" target="_blank"
+        >as a Git repository</a
+      >.
+    </p>
+    <p>
+      I use an alternative implementation of Nix called <ExtLink href="https://lix.systems/"
+        >Lix</ExtLink
+      >.
+    </p>
+
+    <h3>Command Line</h3>
+    <h4><ExtLink href="https://nushell.sh/">Nushell</ExtLink></h4>
+    <p>
+      Nushell is my favorite shell. It is data-oriented and nice to use. It has a lot f nice stuff
+      for converting data formats and transforming data. It makes scripting easy.
+    </p>
+    <h4><ExtLink href="https://starship.rs/">Starship</ExtLink> (prompt)</h4>
+    <p>
+      I use starship to generate my shell's prompt. I like how configurable it is and copy my config
+      to other platforms and shells to get a consistent experience.
+    </p>
+    <h4><ExtLink href="https://github.com/ajeetdsouza/zoxide">Zoxide</ExtLink></h4>
+    <p>
+      Zoxide is a nice utility that remembers directories I've <code>cd</code>'d into. When I <code
+        >cd</code
+      > again it uses that database to find a suitable directory without needing me to type in the whole
+      path. As an example, I can <code>cd</code> into my NixOS config by just typing <code
+        >cd ni</code
+      >.
+    </p>
+    <h4><ExtLink href="https://tldr.sh/">tldr</ExtLink></h4>
+    <p>
+      tldr is a concise version of man, with a community maintained list of documentation that tells
+      you how to do common actions with a given command.
+    </p>
+    <p>
+      I use a tldr implementation called <ExtLink href="https://tealdeer-rs.github.io/tealdeer/"
+        >tealdeer</ExtLink
+      >.
+    </p>
+    <h4><ExtLink href="https://github.com/sharkdp/bat">bat</ExtLink></h4>
+    <p>
+      Bat is a pretty version of cat that gives syntax highlighting and auto-pages if needed. It
+      also has stuff for viewing manpages and diffs.
+    </p>
+    <h4><ExtLink href="https://yazi-rs.github.io/">yazi</ExtLink></h4>
+    <p>
+      Yazi is TUI file manager. I really like it for quick file operations. It also has a mount
+      plugin for udisks and can extract archives automatically.
+    </p>
+    <h4><ExtLink href="https://www.musicpd.org/">MPD</ExtLink></h4>
+    <p>
+      Daemon for playing music! It's nice that I can change players while still having the same
+      underlying system. It also can announce songs to Discord and MPRIS.
+    </p>
+    <h4><ExtLink href="https://rmpc.mierak.dev/">rmpc</ExtLink></h4>
+    <p>Command line controller for MPD, I really like how simple it is. And it supports Cava.</p>
+    <h4><ExtLink href="https://just.systems/man/en/">just</ExtLink></h4>
+    <p>
+      A refreshingly simple command runner that <em>just</em> works. I write recipes in a Justfile and
+      it runs the commands I specify.
+    </p>
+    <h4><ExtLink href="https://docs.jj-vcs.dev/latest/">jujutsu</ExtLink> (jj)</h4>
+    <p>
+      An alternative to Git. From the moment I started using it I loved it. It has very good UX and
+      makes my life so much easier. The underlying repository is still Git too!
+    </p>
+    <h4><ExtLink href="https://neovim.io/">neovim</ExtLink></h4>
+    <p>
+      I like terminal editors, and <ExtLink href="https://github.com/nix-community/nixvim"
+        >Nixvim</ExtLink
+      > makes configuring it very nice.
+    </p>
+    <h4>
+      <ExtLink href="https://github.com/pythops/impala">impala</ExtLink>, <ExtLink
+        href="https://github.com/pythops/bluetui">bluetui</ExtLink>
+    </h4>
+    <p>Both TUIs for managing Wifi/Bluetooth, very handy!</p>
+
+    <h3>Graphics</h3>
+    <h4><ExtLink href="https://niri-wm.github.io/niri/">Niri</ExtLink> (Window Manager)</h4>
+    <p>
+      Niri is a wayland window manager that lays out windows as an infinite strip of columns. I
+      really like this methodology and have started to like having my sites and apps as columns. I
+      have firefox set to open links in new windows now too since it's easier to manage that way.
+    </p>
+    <p>In addition to Niri I use the following programs to build a graphical shell.</p>
+    <ul>
+      <li>waybar</li>
+      <li>swaync</li>
+      <li>swayosd</li>
+      <li>hyprlock</li>
+      <li>swayidle</li>
+      <li>rofi</li>
+    </ul>
+    <p>The config I use for each of these are in my NixOS flake.</p>
+    <h4><ExtLink href="https://www.firefox.com/en-US/">Firefox</ExtLink></h4>
+    <p>
+      I've used Firefox for a while. It's my favorite to configure with Nix, and I can disable all
+      their annoying stuff (suggestions, new tab stories, AI stuff, telemetry) pretty easily.
+    </p>
+    <h4><ExtLink href="https://catppuccin.com/">Catppuccin</ExtLink></h4>
+    <p>
+      Catppuccin my beloved. I like the color scheme and the Nix integration is amazing. All must be
+      cat.
+    </p>
+    <h4><ExtLink href="https://github.com/zaps166/QMPlay2">QMPlay2</ExtLink></h4>
+    <p>Video player I like to use, it's mostly for local files. For music I use MPD/rmpc.</p>
+    <h4><ExtLink href="https://wezterm.org/">Wezterm</ExtLink></h4>
+    <p>
+      Wezterm is a nice terminal emulator that is fast enough for me. However, I don't have a use
+      for a lot of its features, might switch to something else soon.
+    </p>
+    <p>
+      Also it keeps freezing? Although this may be just my laptop so I'm not gonna blame it there.
+    </p>
+    <h4><ExtLink href="https://kdeconnect.kde.org/">KDE Connect</ExtLink></h4>
+    <p>
+      Connecting my phone to my computer. It syncs clipboard, media controls, and notifications! I
+      love using it.
+    </p>
+    <h4><ExtLink href="https://keepassxc.org/">KeepassXC</ExtLink></h4>
+    <p>
+      A nice password manager. I can't configure it with Nix that well but I live with it. I like
+      how it can manage SSH keys as well, putting them in my agent when the DB is unlocked.
+    </p>
+    <h4><ExtLink href="https://syncthing.net/">Syncthing</ExtLink></h4>
+    <p>
+      Not <em>really</em> graphical but putting it here anyway. Easy, reliable sync between my devices.
+      I use it to sync data between my laptop, desktop, and phone. I sync my entire photo and music library
+      (surprisingly fits fine on my phone) as well as my KeepassXC database.
+    </p>
+    <h4><ExtLink href="https://font.subf.dev/en/">Maple Mono</ExtLink></h4>
+    <p>
+      Nice looking monospace font for my editor! I like the ligatures and it has nerd fonts builtin.
+    </p>
+  </section>
+  <section>
+    <h2>Sites/Services</h2>
+    <h3><ExtLink href="https://witchsky.app">Witchsky</ExtLink></h3>
+    <p>Alternative frontend for Bluesky. A lot of neat features and a catppuccin theme!!!</p>
+    <h3><ExtLink href="github.com/haileyok/cocoon">Cocoon</ExtLink> (Self-hosted)</h3>
+    <p>
+      Self hosting my PDS is scary and fun. Cocoon seemed simple so I went with it, and it works
+      great! I might try tranquil at some point too.
+    </p>
+    <h3><ExtLink href="https://tangled.org">Tangled</ExtLink></h3>
+    <p>
+      I get to self host my own repositories while still getting social features. Tangled is such a
+      neat idea and I really want to see it succeed.
+    </p>
+    <h3><ExtLink href="https://porkbun.com">Porkbun</ExtLink></h3>
+    <p>
+      They're a good registrar. I'm not gonna lie "AI generated domain search" seems so silly to me.
+      I really don't get the point. Either way it's a nice experience and their UI is easy to use.
+    </p>
+  </section>
+  <section>
+    <h2>Languages/Frameworks</h2>
+    Stuff I like using.
+    <h3><ExtLink href="https://nixos.org/">Nix</ExtLink></h3>
+    <p>
+      I don't just use it for my system! I like using Nix to develop my software. Setting up dev
+      environments is easy and distributing packages is nice. The language itself isn't perfect, but
+      the pros heavily outweigh the cons.
+    </p>
+    <h3><ExtLink href="https://rust-lang.org/">Rust</ExtLink></h3>
+    <p>
+      Rust is a nice language. I struggled to find a "go-to" language for my projects but after
+      learning Rust I really like using it. It's my favorite language.
+    </p>
+    <h3><ExtLink href="https://tauri.app/">Tauri</ExtLink></h3>
+    <p>
+      Rust and web, my two favorite things! Tauri lets you write most application logic in Rust and
+      then use a WebView for the frontend. It uses the system webview (for better or for worse). It
+      might be a bit overkill but also nuh uh.
+    </p>
+    <h3><ExtLink href="https://astro.build/">AstroJS</ExtLink></h3>
+    <p>
+      Astro is really nice for SSG. I don't use it for SSR but it's probably good for that too. I
+      just really like having integrations with other frameworks and the content collections system
+      is so wonderful to use. Their docs also made me want to get into technical writing. It's
+      usually my go-to for making any static site since I know it well and it's versatile. This
+      website is made with Astro :)
+    </p>
+    <h3><ExtLink href="https://vite.dev">Vite</ExtLink></h3>
+    <p>
+      Vite is a nice build tool. Astro is built on top of it but when Astro is too much (like when
+      I'm using Tauri), Vite is a great choice.
+    </p>
+    <h3>
+      <ExtLink href="https://docs.astral.sh/uv/">uv</ExtLink>, <ExtLink
+        href="https://docs.astral.sh/ruff/">ruff</ExtLink
+      > (Python)
+    </h3>
+    <p>
+      Modern Python tooling THANK GOD. uv is a great package manager with actually nice UX. Ruff is
+      a good lightweight formatter and linter.
+    </p>
+    <h3>
+      <ExtLink href="https://oxc.rs/docs/guide/usage/linter">oxlint</ExtLink>, <ExtLink
+        href="https://oxc.rs/docs/guide/usage/formatter.html">oxfmt</ExtLink
+      > (JavaScript/TypeScript)
+    </h3>
+    <p>Replacements for eslint and prettier. Both are a lot faster and not as bloated. Big fan.</p>
+    <h3><ExtLink href="https://www.djangoproject.com/">Django</ExtLink></h3>
+    <p>
+      I don't use it much anymore but I'd still die for it. It's so easy to use and the ORM is my
+      favorite
+    </p>
+    <h3><ExtLink href="https://typst.app/">Typst</ExtLink></h3>
+    <p>
+      I use Typst for any documents or slide shows I create. I love having a language to use instead
+      of having to do WYSIWYG editing. <a href="/resume.pdf">My Resume</a> is made with Typst.
+    </p>
+  </section>
+  <section>
+    <h2>Finding Cool Things</h2>
+    <p>
+      Most of this stuff I did not discover on my own! I read a lot of sites like <ExtLink
+        href="https://lobste.rs/">lobsters</ExtLink
+      > to learn about new projects. I also like social media (and social media-adjacent) sites like Bluesky,
+      GitHub, and Tangled to find new projects!
+    </p>
+  </section>
+</Layout>
