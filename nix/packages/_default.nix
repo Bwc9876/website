@@ -2,7 +2,7 @@
   src = ../..;
 in
   pkgs.buildNpmPackage {
-    name = "portfolio-site";
+    name = "website";
     version = "0.0.0";
     inherit src;
     packageJSON = ../../package.json;

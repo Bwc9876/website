@@ -20,11 +20,11 @@ const options: Intl.DateTimeFormatOptions = {
     blogEntries.map((p) => (
       <article>
         <h2>
-          <a href={`/blog/${p.slug}`}>{p.data.title}</a>
+          <a href={`/blog/${p.id}`}>{p.data.title}</a>
         </h2>
         <p>{p.data.date.toLocaleDateString(undefined, options)}</p>
         <p>
-          {p.data.summary}&nbsp;&nbsp;<a href={`/blog/${p.slug}`}>Read More</a>
+          {p.data.summary}&nbsp;&nbsp;<a href={`/blog/${p.id}`}>Read More</a>
         </p>
       </article>
     ))

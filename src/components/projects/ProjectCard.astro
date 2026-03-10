@@ -25,21 +25,20 @@ const getHueFromText = (text: string): string => `hue-rotate(${stringToNumber(te
 const { project } = Astro.props;
 ---
 
-<a href={`/projects/${project.slug}/`}>
+<a href={`/projects/${project.id}/`}>
   <article>
     <div>
       <Image
         class="thumbnail"
-        transition:name={`project-img-${project.slug}`}
-        format="webp"
+        transition:name={`project-img-${project.id}`}
         src={project.data.image}
+        densities={[1, 1.5, 2]}
+        width="400"
         alt=""
       />
       <Image
-        style={{ filter: getHueFromText(project.slug) }}
+        style={{ filter: getHueFromText(project.id) }}
         class="backdrop"
-        alt=""
-        format="webp"
         src={backdrop}
         alt="Backdrop"
       />

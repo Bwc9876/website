@@ -92,7 +92,7 @@ const blogEntries = await getCollection("posts");
         {i === 0 && <hr />}
         <hgroup>
           <h2>
-            <a href={`/blog/posts/${p.slug}`}>{p.data.title}</a>
+            <a href={`/blog/posts/${p.id}`}>{p.data.title}</a>
           </h2>
           <h3>
             {p.data.date.toLocaleDateString("en-us", {
@@ -104,7 +104,7 @@ const blogEntries = await getCollection("posts");
           </h3>
         </hgroup>
         <p>
-          {p.data.summary}&nbsp;&nbsp;<a href={`/blog/posts/${p.slug}`}>Read More</a>
+          {p.data.summary}&nbsp;&nbsp;<a href={`/blog/posts/${p.id}`}>Read More</a>
         </p>
         <hr />
       </>
@@ -114,7 +114,7 @@ const blogEntries = await getCollection("posts");
 ```
 
 Great! I'll probably fiddle with it in the future but it's a good start. Now we need to make a page for each post.
-To make my URLs look nice I'm going to create a subfolder within `blog` called `posts` and then place a `[...slug].astro` in there.
+To make my URLs look nice I'm going to create a subfolder within `blog` called `posts` and then place a `[...id].astro` in there.
 This will allow me to use `getStaticPaths()` to define the paths for each post.
 
 ```astro
@@ -124,7 +124,7 @@ import { CollectionEntry, getCollection } from "astro:content";
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
   return posts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry }
   }));
 };
@@ -171,7 +171,7 @@ Then we need to map those to HTML
       {
         headings.map((h) => (
           <li>
-            <a href={`#${h.slug}`}>{h.text}</a>
+            <a href={`#${h.id}`}>{h.text}</a>
           </li>
         ))
       }

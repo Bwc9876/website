@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 import IconLink from "@components/IconLink.astro";
@@ -7,12 +7,12 @@ import { Icon } from "astro-icon/components";
 export async function getStaticPaths() {
   const renameEntries = await getCollection("projects");
   return renameEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry }
   }));
 }
 const { entry } = Astro.props as { entry: CollectionEntry<"projects"> };
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const firstOtherLink = entry.data.links?.other?.[0];
 
@@ -75,10 +75,7 @@ const og = {
     </div>
     <div class="img-container">
       <Image
-        transition:name={`project-img-${entry.slug}`}
-        format="webp"
-        width={474}
-        height={474}
+        transition:name={`project-img-${entry.id}`}
         alt={entry.data.name}
         src={entry.data.image}
       />
@@ -165,7 +162,7 @@ const og = {
   .hero .img-container img {
     border-radius: 5px;
     filter: drop-shadow(0 0 100px color(from var(--primary) srgb r g b / 0.2));
-    max-width: 100%;
+    width: 60%;
     height: auto;
     margin: auto;
   }

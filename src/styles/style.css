@@ -1,6 +1,6 @@
+@import "@fontsource/maple-mono/index.css";
+@import "@fontsource/charis-sil/index.css";
 /* Breakpoint Queries, Using Bootstrap's */
-@import "@fontsource/maple-mono";
-@import "@fontsource/charis-sil";
 /* Smallest: 576px */
 
 @custom-media --sm (width >=576px);
@@ -32,6 +32,9 @@
   --primary: #0ee19b;
   --secondary: #012d1e;
   --accent: #53d164;
+
+  --font-maple-mono: "Maple Mono", "monospace";
+  --font-charis-sil: "Charis", "serif";
 }
 
 /* Color Aliases */
@@ -43,17 +46,17 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
-  font-family: "Maple Mono", monospace;
+  font-family: var(--font-maple-mono);
 }
 
 nav a,
 pre,
 code {
-  font-family: "Maple Mono", monospace;
+  font-family: var(--font-maple-mono);
 }
 
 :root {
-  font-family: "Charis", sans-serif;
+  font-family: var(--font-charis);
 }
 
 /* Spacing Scale, Major Third */

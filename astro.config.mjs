@@ -15,6 +15,21 @@ export default defineConfig({
       theme: "catppuccin-mocha"
     }
   },
+  // fonts: [
+  //   {
+  //     name: "Maple Mono",
+  //     fallbacks: ["monospace"],
+  //     cssVariable: "--font-maple-mono",
+  //     provider: fontProviders.npm({ remote: false }),
+  //     options: { package: "@fontsource/maple-mono", file: "latin.css", },
+  //   },
+  //   {
+  //     name: "Charis SIL",
+  //     cssVariable: "--font-charis",
+  //     provider: fontProviders.npm({ remote: false }),
+  //     options: { package: "@fontsource/charis-sil", file: "latin.css", },
+  //   }
+  // ],
   vite: {
     css: {
       transformer: "lightningcss",
@@ -23,5 +38,8 @@ export default defineConfig({
     build: {
       cssMinify: "lightningcss"
     }
+  },
+  experimental: {
+    rustCompiler: true
   }
 });
