@@ -83,7 +83,7 @@ const canonical = Astro.url.toString();
             alt="Ben C's Avatar"
             src={cow}
           />
-          <span style="color: var(--text);"><b class="gradient-text">Bwc9876</b>.dev</span>
+          <span style="color: var(--text);"><span class="gradient-text">Bwc9876</span>.dev</span>
         </a>
         <span>
           <a href="/projects">Projects</a>
@@ -142,7 +142,6 @@ const canonical = Astro.url.toString();
 
   @media (width >= 1050px) {
     nav {
-      gap: var(--3);
       flex-direction: row;
     }
 
@@ -163,9 +162,15 @@ const canonical = Astro.url.toString();
     font-size: var(--2);
     display: flex;
     flex-direction: row;
-    gap: var(--1);
     align-items: center;
     justify-content: center;
+    background-color: var(--secondary);
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    & > span > span {
+      transform: translateY(-2px);
+    }
   }
 
   nav > span {
