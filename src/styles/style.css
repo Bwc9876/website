@@ -26,71 +26,11 @@
 
 /* Color Definitions */
 :root {
-  --text: #daf1ef;
-  --background: #080609;
-  --primary: #53d164;
+  --text: #cecece;
+  --background: #110f12;
+  --primary: #0ee19b;
   --secondary: #012d1e;
-  --accent: #0ee19b;
-
-  --text-50: #edf8f7;
-  --text-100: #daf1ef;
-  --text-200: #b5e3df;
-  --text-300: #90d5cf;
-  --text-400: #6bc7bf;
-  --text-500: #46b9af;
-  --text-600: #38948c;
-  --text-700: #2a6f69;
-  --text-800: #1c4a46;
-  --text-900: #0e2523;
-  --text-950: #071212;
-
-  --background-50: #f3f0f5;
-  --background-100: #e7e0eb;
-  --background-200: #cfc2d6;
-  --background-300: #b8a3c2;
-  --background-400: #a085ad;
-  --background-500: #886699;
-  --background-600: #6d527a;
-  --background-700: #523d5c;
-  --background-800: #36293d;
-  --background-900: #1b141f;
-  --background-950: #0e0a0f;
-
-  --primary-50: #ebfaed;
-  --primary-100: #d7f4db;
-  --primary-200: #aeeab6;
-  --primary-300: #86df92;
-  --primary-400: #5ed46e;
-  --primary-500: #36c949;
-  --primary-600: #2ba13b;
-  --primary-700: #20792c;
-  --primary-800: #15511d;
-  --primary-900: #0b280f;
-  --primary-950: #051407;
-
-  --secondary-50: #e6fef6;
-  --secondary-100: #cdfeee;
-  --secondary-200: #9bfddc;
-  --secondary-300: #69fccb;
-  --secondary-400: #37fbba;
-  --secondary-500: #05faa8;
-  --secondary-600: #04c887;
-  --secondary-700: #039665;
-  --secondary-800: #026443;
-  --secondary-900: #013222;
-  --secondary-950: #011911;
-
-  --accent-50: #e7fdf6;
-  --accent-100: #cffced;
-  --accent-200: #9ff9db;
-  --accent-300: #6ff6c9;
-  --accent-400: #3ff3b7;
-  --accent-500: #0ff0a5;
-  --accent-600: #0cc084;
-  --accent-700: #099063;
-  --accent-800: #066042;
-  --accent-900: #033021;
-  --accent-950: #021810;
+  --accent: #53d164;
 }
 
 /* Color Aliases */
@@ -98,8 +38,7 @@
 /* Spacing Scale, Major Third */
 :root {
   /* 1rem = 16px */
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 125%;
+  font-family: sans-serif;
   --scale: 1.25;
   --small: calc(1rem * pow(var(--scale), -1));
   --half: calc(1rem * pow(var(--scale), -0.5));
@@ -152,83 +91,34 @@ body {
 }
 
 a {
-  color: var(--accent-600);
+  color: var(--accent);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 button,
 button.primary,
 [role="button"] {
-  --bg: var(--primary-400);
-  --hover-bg: var(--primary-500);
-  --active-bg: var(--primary-300);
-  --disabled-bg: var(--primary-600);
-
   padding: var(--component-padding);
   color: var(--text);
   border-radius: 10px;
   border: solid 2px transparent;
-  background-color: var(--bg);
+  background-color: var(--secondary);
   cursor: pointer;
   transition: background-color 100ms linear;
-  color: var(--background-800);
   text-decoration: none;
-}
-
-button.secondary,
-.secondary[role="button"] {
-  --bg: var(--secondary-500);
-  --hover-bg: var(--secondary-400);
-  --active-bg: var(--secondary-600);
-  --disabled-bg: var(--secondary-700);
-}
-
-button.accent,
-.accent[role="button"] {
-  --bg: var(--accent-400);
-  --hover-bg: var(--accent-500);
-  --active-bg: var(--accent-300);
-  --disabled-bg: var(--accent-600);
 }
 
 button:active,
 [role="button"]:active {
-  background-color: var(--active-bg);
+  filter: hue-rotate(50deg);
 }
 
 button:hover,
 [role="button"]:hover {
-  background-color: var(--hover-bg);
-}
-
-button:disabled,
-[role="button"]:disabled {
-  background-color: var(--disabled-bg);
-  color: var(--text-disabled);
-}
-
-button:disabled:hover,
-[role="button"]:disabled:hover {
-  cursor: default;
-}
-
-input {
-  padding: var(--component-padding);
-  color: var(--text);
-  border-radius: var(--1);
-  border: solid 2px var(--accent-200);
-  background-color: var(--background-raised);
-}
-
-body {
-  font-weight: 400;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 700;
+  filter: saturate(150%);
 }
 
 .gradient-text {
@@ -255,7 +145,7 @@ h5 {
     overflow: hidden;
     transform: translate(-50%, -0.25rem);
     border-radius: 5px;
-    background: var(--accent-800);
+    background: var(--secondary);
     content: attr(data-tooltip);
     color: var(--text);
     font-style: normal;
@@ -277,7 +167,7 @@ h5 {
     border-radius: 0;
     background-color: transparent;
     content: "";
-    color: var(--accent-800);
+    color: var(--secondary);
   }
 
   &[data-placement="bottom"] {

@@ -6,7 +6,7 @@ const blogEntries = await getCollection("posts");
 
 blogEntries.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const options = {
+const options: Intl.DateTimeFormatOptions = {
   weekday: "long",
   year: "numeric",
   month: "long",
@@ -48,9 +48,5 @@ const options = {
   article p:nth-child(2) {
     margin: 0;
     font-size: var(--2);
-  }
-
-  h2 > a {
-    text-decoration: none !important;
   }
 </style>

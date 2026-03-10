@@ -98,21 +98,24 @@ const { Content, headings } = await entry.render();
 </style>
 
 <style is:global>
-  pre {
-    padding: var(--small);
-    border-radius: 5px;
-    box-sizing: border-box;
-    background-color: var(--background-950) !important;
-    box-shadow: inset color(from var(--background-100) srgb r g b / 0.2) 0 0 6px;
-    overflow-x: auto;
-    width: 100%;
-  }
+  main {
+    pre {
+      padding: var(--small);
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: color(
+        from var(--background) srgb calc(r / 2) calc(g / 2) calc(b / 2)
+      ) !important;
+      overflow-x: auto;
+      width: 100%;
+    }
 
-  img {
-    box-sizing: border-box;
-    border-radius: 5px;
-    max-width: 100%;
-    height: auto;
-    box-shadow: color(from var(--accent) srgb r g b / 0.2) 0 0 6px;
+    img {
+      box-sizing: border-box;
+      border-radius: 5px;
+      max-width: 100%;
+      height: auto;
+      box-shadow: color(from var(--accent) srgb r g b / 0.2) 0 0 6px;
+    }
   }
 </style>

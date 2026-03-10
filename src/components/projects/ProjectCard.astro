@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import backdrop from "@assets/backdrop.png";
+import backdrop from "@assets/backdrop.webp";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -75,6 +75,7 @@ const { project } = Astro.props;
     display: flex;
     flex-direction: column;
     height: 100%;
+    color: var(--text);
     background-color: var(--secondary);
     border-radius: 5px;
   }

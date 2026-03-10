@@ -1,7 +1,7 @@
 ---
 import ProjectGrid from "@components/projects/ProjectGrid.astro";
 import Layout from "@layouts/Layout.astro";
-import cow from "@assets/cow.png";
+import cow from "@assets/cow.webp";
 import { Image } from "astro:assets";
 ---
 
@@ -19,10 +19,6 @@ import { Image } from "astro:assets";
         <a href="/projects/menagerie">websites</a> and
         <a href="/projects/ow-mod-man">desktop apps</a>.<br /> I enjoy every aspect of software development.
       </p>
-      <div class="ctas">
-        <a href="/projects" role="button" class="secondary">View My Projects</a>
-        <a href="/blog" role="button" class="primary">Read My Blog</a>
-      </div>
     </div>
     <div class="hero-image">
       <Image width={150} height={150} format="webp" alt="Ben C's Avatar" src={cow} />
@@ -55,14 +51,6 @@ import { Image } from "astro:assets";
       gap: var(--2);
       justify-content: space-between;
       align-items: center;
-    }
-
-    .hero .ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--1);
-      margin: var(--5) 0;
-      font-weight: bold;
     }
 
     @keyframes glow {

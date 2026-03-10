@@ -107,7 +107,7 @@ notification daemon. In my case I'm using
 
 With that we get a neat notification when we screenshot.
 
-![A notification that I just took a screenshot with the screenshot visible](@assets/blog/wip1_screenshot_notif.png)
+![A notification that I just took a screenshot with the screenshot visible](@assets/blog/wip1_screenshot_notif.webp)
 
 Now we need to handle each action, the chosen action is returned by notify-send, so we can match on
 that.
@@ -245,7 +245,7 @@ Assuming `wf-recorder` stops, we'll send a notification to the user that the rec
 let action = notify-send --app-name=simplescreenrecorder --icon=simplescreenrecorder -t 7500 --action=open=Open --action=folder="Show In Folder" --action=delete=Delete "Recording finished" $"File saved to ($out_name)"
 ```
 
-![A notification that I just took a screen recording with a video camera icon visible](@assets/blog/wip1_screenrec_notif.png)
+![A notification that I just took a screen recording with a video camera icon visible](@assets/blog/wip1_screenrec_notif.webp)
 
 Most arguments are the same here as the screenshot script, the only difference is the icon and app
 name. The actions are also basically the same, so I'll leave out the explanation and just show the

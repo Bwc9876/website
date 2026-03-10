@@ -94,7 +94,7 @@ On a wired connection all the games I've tested are responsive and work very wel
 issues that are more a Linux/NixOS thing™ than specific to this. Here's a screenshot from Portal 2
 with the overlay enabled.
 
-![Portal 2 metrics on Remote Play](../../assets/blog/steamrp_portal2.png)
+![Portal 2 metrics on Remote Play](../../assets/blog/steamrp_portal2.webp)
 
 Consistently I get <1ms input latency and ~20ms display latency in-game, which for me is perfectly
 acceptable. I'm able to have all the settings on high now without my laptop becoming a nice and
