@@ -191,7 +191,6 @@ button:hover,
   }
 
   &[data-placement="bottom"] {
-
     &::before,
     &::after {
       top: 100%;
@@ -207,7 +206,6 @@ button:hover,
   }
 
   &[data-placement="left"] {
-
     &::before,
     &::after {
       top: 50%;
@@ -225,7 +223,6 @@ button:hover,
   }
 
   &[data-placement="right"] {
-
     &::before,
     &::after {
       top: 50%;
@@ -244,7 +241,6 @@ button:hover,
 
   &:focus,
   &:hover {
-
     &::before,
     &::after {
       opacity: 1;
@@ -252,10 +248,8 @@ button:hover,
   }
 
   @media (hover: hover) and (pointer: fine) {
-
     &:focus,
     &:hover {
-
       &::before,
       &::after {
         --tooltip-slide-to: translate(-50%, -0.25rem);
@@ -274,10 +268,8 @@ button:hover,
     }
 
     &[data-placement="bottom"] {
-
       &:focus,
       &:hover {
-
         &::before,
         &::after {
           --tooltip-slide-to: translate(-50%, 0.25rem);
@@ -294,10 +286,8 @@ button:hover,
     }
 
     &[data-placement="left"] {
-
       &:focus,
       &:hover {
-
         &::before,
         &::after {
           --tooltip-slide-to: translate(-0.25rem, -50%);
@@ -314,10 +304,8 @@ button:hover,
     }
 
     &[data-placement="right"] {
-
       &:focus,
       &:hover {
-
         &::before,
         &::after {
           --tooltip-slide-to: translate(0.25rem, -50%);
