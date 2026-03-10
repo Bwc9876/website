@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg stroke="#000" class="pfp-lines" version="1.1" viewBox="0 0 48 48"
-    xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width=".64515">
-        <rect x="23.946" y=".32257" width=".10717" height="6.5158" />
-        <rect x="23.946" y="41.162" width=".10717" height="6.5158" />
-        <rect transform="rotate(-90)" x="-24.054" y="41.162" width=".10717" height="6.5158" />
-        <rect transform="rotate(-90)" x="-24.054" y=".32257" width=".10717" height="6.5158" />
-        <g transform="rotate(-45,24,24)">
-            <rect x="23.946" y=".32257" width=".10717" height="6.5158" />
-            <rect x="23.946" y="41.162" width=".10717" height="6.5158" />
-            <rect transform="rotate(-90)" x="-24.054" y="41.162" width=".10717" height="6.5158" />
-            <rect transform="rotate(-90)" x="-24.054" y=".32257" width=".10717" height="6.5158" />
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" stroke="#000" class="pfp-lines" viewBox="0 0 48 48"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width=".645"><path d="M23.946.323h.107v6.516h-.107zM23.946 41.162h.107v6.516h-.107zM41.162 24.054v-.107h6.516v.107zM.323 24.054v-.107h6.516v.107zM7.22 7.296l.075-.076 4.608 4.608-.076.076zM36.097 36.174l.076-.076 4.607 4.607-.075.076zM36.174 11.903l-.076-.076 4.607-4.607.076.075zM7.296 40.78l-.076-.075 4.608-4.608.076.076z"/></g></svg>
