@@ -79,6 +79,8 @@ const canonical = Astro.url.toString();
             class="nav-icon"
             width={150}
             height={150}
+            transition:name="pfp"
+            transition:persist
             format="webp"
             alt="Ben C's Avatar"
             src={cow}
@@ -161,11 +163,12 @@ const canonical = Astro.url.toString();
   nav > a:first-child {
     font-size: var(--2);
     display: flex;
+    gap: 5px;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: var(--secondary);
-    padding: 5px 10px;
+    padding: 5px 7px;
     border-radius: 5px;
 
     & > span > span {
@@ -186,8 +189,25 @@ const canonical = Astro.url.toString();
   .nav-icon {
     width: var(--4);
     height: var(--4);
-    padding: 5px;
     border-radius: 100%;
+    transition: transform 800ms
+      linear(
+        0,
+        0.36 6.7%,
+        0.635 13.9%,
+        0.832 21.8%,
+        0.904 26.1%,
+        0.958 30.6%,
+        1.015 38.6%,
+        1.036 48.1%,
+        1.034 56.4%,
+        1.005 81.2%,
+        1
+      );
+
+    @starting-style {
+      transform: translateX(calc(-1 * 50vw - var(--5))) rotate(-300deg);
+    }
   }
 
   main {
