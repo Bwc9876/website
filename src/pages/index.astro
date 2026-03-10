@@ -65,10 +65,10 @@ import { Image } from "astro:assets";
 
     @keyframes glow {
       0% {
-        box-shadow: 0 0 0 0 var(--primary);
+        filter: drop-shadow(0 0 0 var(--primary));
       }
       100% {
-        box-shadow: 0 0 450px 5px var(--primary);
+        filter: drop-shadow(0 0 450px var(--primary));
       }
     }
 
