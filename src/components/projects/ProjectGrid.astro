@@ -25,23 +25,9 @@ if (limitTo) {
 </div>
 
 <style>
-  @media (width >= 1700px) {
-    div {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-  @media (1200px <= width <= 1700px) {
-    div {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  @media (width <= 1200px) {
-    div {
-      grid-template-columns: 1fr;
-    }
-  }
   div {
     display: grid;
     gap: var(--2);
+    grid-template-columns: repeat(auto-fit, minmax(var(--14), 1fr));
   }
 </style>
