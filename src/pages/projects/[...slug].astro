@@ -30,8 +30,8 @@ const og = {
       <div class="project-header">
         <h1 class="gradient-text">{entry.data.name}</h1>
         <p>
-          {entry.data.timespan.from}{entry.data.timespan.to && <> - {entry.data.timespan.to}</>} •
-          {entry.data.tags.join(" • ")}
+          {entry.data.timespan.from}{entry.data.timespan.to && <> - {entry.data.timespan.to}</>},
+          {entry.data.tags.join(", ")}
         </p>
       </div>
       <p>{entry.data.summary}</p>

@@ -46,7 +46,7 @@ const { project } = Astro.props;
     </div>
     <div>
       <h3 class="project-name">{project.data.name}</h3>
-      <small>{project.data.tags.join(" • ")}</small>
+      <small>{project.data.tags.join(", ")}</small>
       <p>{project.data.summary}</p>
     </div>
   </article>
