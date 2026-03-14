@@ -15,7 +15,5 @@ environment:
 steps:
   - name: Build Site
     command: |
-      echo "Building Site"
       npm run build
-      echo "Done! Yay :) x2"
 
