@@ -1,0 +1,17 @@
+when:
+  - event: ["manual"]
+
+engine: nixery
+
+dependencies:
+  nixpkgs:
+    - nodejs
+    - typst
+
+environment:
+  ASTRO_TELEMETRY_DISABLED: 1
+
+steps:
+  - name: Build Site
+    command: |
+      npm run build
