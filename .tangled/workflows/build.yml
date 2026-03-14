@@ -15,5 +15,6 @@ environment:
 steps:
   - name: Build Site
     command: |
+      npm i
       npm run build
 
