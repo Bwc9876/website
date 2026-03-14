@@ -1,0 +1,30 @@
+---
+name: Manhunt App
+summary: Live location tracking and playback for the game "manhunt"
+timespan:
+  from: 2025
+  to: 2026
+tags:
+  - tauri
+  - rust
+  - react
+  - mobile
+links:
+  github: Bwc9876/manhunt-app
+image: ./manhunt-app.webp
+---
+
+import ExtLink from "@components/ExtLink.astro";
+export const components = { a: ExtLink };
+
+This is a side project I've been working on-and-off with for a bit. The idea is a live location tracking app for when you're playing manhunt.
+
+The primary purpose is to display a replay of everyone on a map as the game goes on. Additionally, during the game, hiders' locations can be sent to seekers to keep the hiders on their toes. I also have logic written for a powerup system, but not 100% sure how I want to implement it yet.
+
+I made the bulk of the app in Rust. I'm using [matchbox](https://github.com/johanhelsing/matchbox) for transport. It's a WebRTC implementation so all my netcode is peer-to-peer. There's no real authority after the game starts, I have a concept of "host" in the lobby but that's just for changing settings and starting the game.
+
+I'm proud that so far the peer-to-peer is working out; it means data privacy is easy since location data is never sent to me server. Speaking of my server, I'm using matchbox_signaling to create a signaling server that handles matchmaking players.
+
+The actual app part is made with Tauri. I have a fairly minimal UI made in React; it mostly fetches and displays state from my Rust code where the actual logic of the game is being processed. For the map I'm using [leaflet](https://leafletjs.com/).
+
+Hopefully I'll get this done soon. I'm pretty proud of (some of) the code!
