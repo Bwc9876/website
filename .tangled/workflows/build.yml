@@ -17,5 +17,5 @@ steps:
     command: |
       echo "Building Site"
       npm run build
-      echo "Done! Yay :)"
+      echo "Done! Yay :) x2"
 
