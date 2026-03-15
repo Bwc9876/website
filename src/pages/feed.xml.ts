@@ -11,14 +11,14 @@ export async function GET(context: { site: string | URL }) {
 
   return rss({
     title: "Ben C's Blog",
-    description: "Talking about web development, NixOS, Linux customization, and more",
+    description: "I write here sometimes",
     site: context.site,
     items: blogEntries.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.summary,
       link: `/blog/posts/${post.id}`,
-      content: sanitizeHtml(parser.render(post.body), {
+      content: sanitizeHtml(parser.render(post.body ?? ""), {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img"])
       })
     })),
