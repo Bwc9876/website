@@ -2,9 +2,8 @@
   packages = pkgs:
     with pkgs; [
       nodejs_24
-      typst
+      (typst.withPackages (p: [p.basic-resume]))
       typstyle
       tinymist
     ];
-  env = pkgs: {TYPST_PACKAGE_PATH = "${pkgs.resumeTypstPlugins}";};
 }

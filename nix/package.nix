@@ -1,19 +1,18 @@
 {pkgs}: let
-  src = ../..;
+  src = ../.;
 in
   pkgs.buildNpmPackage {
     name = "website";
     version = "0.0.0";
     inherit src;
-    packageJSON = ../../package.json;
+    packageJSON = ../package.json;
     npmDeps = pkgs.importNpmLock {
       npmRoot = src;
     };
     npmConfigHook = pkgs.importNpmLock.npmConfigHook;
     installPhase = "cp -r dist/ $out";
-    nativeBuildInputs = [
-      pkgs.typst
+    nativeBuildInputs = with pkgs; [
+      (typst.withPackages (p: [p.basic-resume]))
     ];
-    TYPST_PACKAGE_PATH = "${pkgs.resumeTypstPlugins}";
     ASTRO_TELEMETRY_DISABLED = 1;
   }
