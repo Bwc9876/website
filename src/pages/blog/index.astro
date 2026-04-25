@@ -19,7 +19,7 @@ const options: Intl.DateTimeFormatOptions = {
   {
     blogEntries.map((p) => (
       <article>
-        <h2>
+        <h2 transition:name={`blog-title-${p.id}`}>
           <a href={`/blog/${p.id}`}>{p.data.title}</a>
         </h2>
         <p>{p.data.date.toLocaleDateString(undefined, options)}</p>
