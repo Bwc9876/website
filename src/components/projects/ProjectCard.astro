@@ -39,6 +39,8 @@ const { project } = Astro.props;
       <Image
         style={{ filter: getHueFromText(project.id) }}
         class="backdrop"
+        aria-hidden="true"
+        role="presentation"
         src={backdrop}
         alt="Backdrop"
       />
