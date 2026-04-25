@@ -72,7 +72,6 @@ const canonical = Astro.url.toString();
     </style>
   </head>
   <body id="top">
-    <div class="backdrop" aria-hidden role="presentation"></div>
     <header class="container">
       <nav aria-label="Main navigation">
         <a href="/"
@@ -118,6 +117,11 @@ const canonical = Astro.url.toString();
 <style>
   body {
     background-color: var(--background);
+    background-image: url("@assets/bg-tile.webp");
+    background-repeat: round;
+    background-blend-mode: multiply;
+    animation: rainbow 5s linear infinite;
+
     margin: 0;
     padding: 0;
     display: flex;
@@ -127,30 +131,26 @@ const canonical = Astro.url.toString();
     overflow-x: hidden;
   }
 
+  body > * {
+    background-color: color(from var(--background) srgb r g b / 70%);
+    backdrop-filter: blur(200px);
+    padding: 0 var(--4);
+  }
+
   header {
     border-bottom: var(--section-border);
   }
 
   @keyframes rainbow {
     0% {
-      filter: hue-rotate(0deg);
+      backdrop-filter: hue-rotate(0deg);
     }
     50% {
-      filter: hue-rotate(180deg);
+      backdrop-filter: hue-rotate(180deg);
     }
     100% {
-      filter: hue-rotate(360deg);
+      backdrop-filter: hue-rotate(360deg);
     }
-  }
-
-  .backdrop {
-    z-index: -50;
-    position: fixed;
-    inset: 0;
-    background-image: url("@assets/bg-tile.webp");
-    background-repeat: round;
-    animation: rainbow 5s linear infinite;
-    opacity: 3%;
   }
 
   nav {
@@ -243,7 +243,6 @@ const canonical = Astro.url.toString();
 
   footer {
     border-top: var(--section-border);
-    margin-top: var(--4);
     display: flex;
     flex-direction: column;
     align-items: center;
