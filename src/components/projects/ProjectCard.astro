@@ -1,48 +1,34 @@
 ---
+import { getImage } from "astro:assets";
 import { Image } from "astro:assets";
-import backdrop from "@assets/backdrop.webp";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   project: CollectionEntry<"projects">;
 }
 
-const stringToNumber = (str: string, seed = 3) => {
-  let h1 = 0xdeadbeef ^ seed,
-    h2 = 0x41c6ce57 ^ seed;
-  for (let i = 0, ch; i < str.length; i++) {
-    ch = str.charCodeAt(i);
-    h1 = Math.imul(h1 ^ ch, 2654435761);
-    h2 = Math.imul(h2 ^ ch, 1597334677);
-  }
-  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
-  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
-  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
-};
-
-const getHueFromText = (text: string): string => `hue-rotate(${stringToNumber(text) % 360}deg)`;
-
 const { project } = Astro.props;
+
+const bgImage = await getImage({
+  format: "webp",
+  src: project.data.image,
+  width: 16,
+  height: 16,
+  quality: 0
+});
 ---
 
 <a href={`/projects/${project.id}/`}>
   <article>
-    <div>
+    <div style={{ "background-image": `url("${bgImage.src}")` }}>
       <Image
         class="thumbnail"
         transition:name={`project-img-${project.id}`}
         src={project.data.image}
         densities={[1, 1.5, 2]}
-        width="400"
-        alt=""
-      />
-      <Image
-        style={{ filter: getHueFromText(project.id) }}
-        class="backdrop"
-        aria-hidden="true"
+        width={400}
         role="presentation"
-        src={backdrop}
-        alt="Backdrop"
+        alt=""
       />
     </div>
     <div>
@@ -86,11 +72,11 @@ const { project } = Astro.props;
   }
 
   a:hover {
-    transform: translateY(calc(var(--1) * -1));
+    transform: translateY(calc(5px * -1));
   }
 
   a:hover img {
-    transform: scale(1.06);
+    transform: scale(1.02);
   }
 
   span {
@@ -105,6 +91,9 @@ const { project } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: 125%;
+    background-position: center;
   }
 
   div {
@@ -125,17 +114,6 @@ const { project } = Astro.props;
     height: auto;
     transition: transform ease-in-out 0.4s;
     height: var(--14);
-  }
-
-  img.thumbnail {
-    z-index: 2;
-  }
-
-  img.backdrop {
-    position: absolute;
-    transform: scale(1.1);
-    inset: 0;
-    object-fit: cover;
-    filter: blur(6px);
+    backdrop-filter: blur(100px);
   }
 </style>
