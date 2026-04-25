@@ -8,27 +8,6 @@
 @custom-media --lg (width >=1200px);
 @custom-media --xl (width >=1700px);
 
-@keyframes rainbow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(180deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-.backdrop {
-  z-index: -50;
-  position: fixed;
-  inset: 0;
-  background-image: url("@assets/bg-tile.webp");
-  animation: rainbow 5s linear infinite;
-  opacity: 3%;
-}
-
 .container {
   --gutter: var(--2);
   margin: 0 var(--gutter);
