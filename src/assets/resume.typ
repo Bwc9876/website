@@ -51,7 +51,8 @@
   consistent: true,
 )
 - Dean's List Fall 2023
-- Treasurer of: Computer Science Club, Competitive Programming Club, Sexuality and Gender Alliance
+- President of Computer Science Club
+- Treasurer of: Competitive Programming Club, Cybersecurity Club, AI & Machine Learning Club
 
 #edu(
   institution: "Berks Career and Technology Center",
