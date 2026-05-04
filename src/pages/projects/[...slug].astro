@@ -28,13 +28,15 @@ const og = {
   <div class="hero">
     <div class="txt">
       <div class="project-header">
-        <h1 class="gradient-text">{entry.data.name}</h1>
-        <p>
+        <h1 transition:name={`project-name-${entry.id}`} class="gradient-text">
+          {entry.data.name}
+        </h1>
+        <p transition:name={`project-tags-${entry.id}`}>
           {entry.data.timespan.from}{entry.data.timespan.to && <> - {entry.data.timespan.to}</>},
           {entry.data.tags.join(", ")}
         </p>
       </div>
-      <p>{entry.data.summary}</p>
+      <p transition:name={`project-summary-${entry.id}`}>{entry.data.summary}</p>
       <div class="ctas">
         {
           entry.data.links?.github && (

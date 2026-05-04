@@ -32,9 +32,11 @@ const bgImage = await getImage({
       />
     </div>
     <div>
-      <h3 class="project-name">{project.data.name}</h3>
-      <small>{project.data.tags.join(", ")}</small>
-      <p>{project.data.summary}</p>
+      <h3 transition:name={`project-name-${project.id}`} class="project-name">
+        {project.data.name}
+      </h3>
+      <small transition:name={`project-tags-${project.id}`}>{project.data.tags.join(", ")}</small>
+      <p transition:name={`project-summary-${project.id}`}>{project.data.summary}</p>
     </div>
   </article>
 </a>
