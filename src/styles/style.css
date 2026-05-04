@@ -88,26 +88,6 @@ small {
   color: var(--text-disabled);
 }
 
-h1 {
-  font-size: var(--5);
-}
-
-h2 {
-  font-size: var(--4);
-}
-
-h3 {
-  font-size: var(--3);
-}
-
-h4 {
-  font-size: var(--2);
-}
-
-h5 {
-  font-size: var(--1);
-}
-
 body {
   color: var(--text);
   background-color: var(--background);
@@ -172,7 +152,7 @@ button:hover,
     content: attr(data-tooltip);
     color: var(--text);
     font-style: normal;
-    font-size: 0.875rem;
+    font-size: var(--small);
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;

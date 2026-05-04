@@ -116,7 +116,7 @@ const canonical = Astro.url.toString();
 
 <style>
   body {
-    background-color: var(--background);
+    background-color: color(from var(--background) srgb r g b / 90%);
     background-image: url("@assets/bg-tile.webp");
     background-repeat: round;
     background-blend-mode: multiply;
@@ -134,9 +134,8 @@ const canonical = Astro.url.toString();
   }
 
   body > * {
-    background-color: color(from var(--background) srgb r g b / 70%);
-    backdrop-filter: blur(200px);
-    padding: 0 var(--4);
+    background-color: color(from var(--background) srgb r g b / 85%);
+    padding: 0 var(--2);
   }
 
   header {
