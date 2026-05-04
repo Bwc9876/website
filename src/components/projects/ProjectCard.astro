@@ -12,8 +12,8 @@ const { project } = Astro.props;
 const bgImage = await getImage({
   format: "webp",
   src: project.data.image,
-  width: 16,
-  height: 16,
+  width: 1,
+  height: 1,
   quality: 0
 });
 ---
@@ -116,6 +116,5 @@ const bgImage = await getImage({
     height: auto;
     transition: transform ease-in-out 0.4s;
     height: var(--14);
-    backdrop-filter: blur(100px);
   }
 </style>
