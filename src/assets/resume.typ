@@ -71,7 +71,7 @@
   company: "West Chester University",
   dates: dates-helper(start-date: "Jan. 2024", end-date: "Present"),
 )
-- Supported users with various on-campus systems, including the RamPortal SIS
+- Supported users with various on-campus systems, including the Ellucian Banner SIS
 - Tested and found security issues on university endpoints and systems
 
 #work(
