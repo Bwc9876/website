@@ -44,11 +44,11 @@ const { Content, headings } = await render(entry);
     flex-direction: column;
     gap: var(--6);
 
-    :first-child {
+    & > :first-child {
       min-width: min-content;
     }
 
-    :last-child {
+    & > :last-child {
       min-width: 0;
     }
   }
