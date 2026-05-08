@@ -42,7 +42,7 @@ const bgImage = await getImage({
 </a>
 
 <style>
-  :not(.project-name) {
+  :not(h3) {
     text-decoration: none !important;
   }
 
@@ -56,6 +56,16 @@ const bgImage = await getImage({
     margin: var(--1) var(--1) 0 var(--1);
   }
 
+  a:hover {
+    h3 {
+      text-decoration: underline;
+    }
+
+    article {
+      background-color: color(from var(--secondary) srgb r calc(g + 0.05) b);
+    }
+  }
+
   p {
     margin: var(--1);
   }
@@ -67,18 +77,6 @@ const bgImage = await getImage({
     color: var(--text);
     background-color: var(--secondary);
     border-radius: 5px;
-  }
-
-  a {
-    transition: transform cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.4s;
-  }
-
-  a:hover {
-    transform: translateY(calc(5px * -1));
-  }
-
-  a:hover img {
-    transform: scale(1.02);
   }
 
   span {
