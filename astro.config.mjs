@@ -40,7 +40,4 @@ export default defineConfig({
       cssMinify: "lightningcss"
     }
   },
-  experimental: {
-    rustCompiler: true
-  }
 });
