@@ -1,6 +1,6 @@
 ---
 title: "RamPortal: An Adventure in Silliness"
-date: 2026-05-13 
+date: 2026-05-13
 summary: Ramblings and complaints about the SIS at my university.
 cowsay: <iframe>s are the root of all evil
 ---
@@ -70,11 +70,11 @@ Also you'll notice even those aren't consistent 😃
 
 ### Banner Admin
 
-When I want to access administrative information for my job, I go to AppNav. AppNav, of course, embeds Banner Admin in an `<iframe>`. 
+When I want to access administrative information for my job, I go to AppNav. AppNav, of course, embeds Banner Admin in an `<iframe>`.
 
 Ignoring the aforementioned issue, which does still happen. Chrome recently introduced [Local Network Access checks](https://github.com/WICG/local-network-access/blob/main/explainer.md). This disallows requests from "remote" addresses to "local" addresses. This is mostly a defense if you're running local HTTP servers (developers will often do this for development versions of their sites).
 
-This is a bit of a weird chain that happens but: 
+This is a bit of a weird chain that happens but:
 
 1. When loading Banner Admin in the `<iframe>`, it loads the Eullician Ethos ISP (I think) to get a session token
 2. That IDP makes some XHR request to a local address (I believe Banner Admin itself), and fails because of LNA protection
@@ -82,7 +82,7 @@ This is a bit of a weird chain that happens but:
 
 Meaning, now in Chrome you can't access Banner Admin. Normally Chrome pops up with a dialog, but because it's in an `<iframe>` it doesn't! They eventually realized this issue and set the proper attributes on the `<iframe>` to allow LNA. Before that though, they told people to **disable LNA checks**. It feels wrong that your application breaks and your advice to people is to disable a security feature of their browser, but that's just me.
 
-The funniest part of this is our university actually uses a public address range for nearly every other device on the network. I'm not sure why exactly but we do get addresses that are at least considered public according to RFC 1918. But for some reason, Banner Admin specifically was given a normal private address. If they used their normal addressing on it, we would have no issues :P. 
+The funniest part of this is our university actually uses a public address range for nearly every other device on the network. I'm not sure why exactly but we do get addresses that are at least considered public according to RFC 1918. But for some reason, Banner Admin specifically was given a normal private address. If they used their normal addressing on it, we would have no issues :P.
 
 And no, other servers don't use the private address range from what I can see.
 
@@ -93,4 +93,3 @@ Luckily I can load Banner Admin directly, and after some messing around I can lo
 RamPortal is still relatively new for the university, we're going to have issues with it as we configure it how we like. But, this issue has happened since day one and it makes people's lives harder. On principle, your website should support all major browsers, and forcing people to use a specific browser is a sign that your application needs some work.
 
 It seems that not much care has gone into the user experience of this system.
-

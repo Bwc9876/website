@@ -25,6 +25,7 @@
     "@iconify-json/simple-icons": "^1.2.92",
     "@playform/inline": "^0.1.4",
     "astro": "^7.1.6",
+    "astro-capo": "^0.0.1",
     "astro-icon": "^1.1.4",
     "cowsay": "^1.6.0",
     "lightningcss": "^1.33.0",

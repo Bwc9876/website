@@ -10,7 +10,7 @@ export default defineConfig({
   site: "https://bwc9876.dev",
   compressHTML: true,
   integrations: [mdx(), icon({ iconDir: "src/assets/icons" }), sitemap(), playformInline()],
-  image: { dangerouslyProcessSVG: true, },
+  image: { dangerouslyProcessSVG: true },
   markdown: {
     shikiConfig: {
       theme: "catppuccin-mocha"
@@ -39,5 +39,5 @@ export default defineConfig({
     build: {
       cssMinify: "lightningcss"
     }
-  },
+  }
 });
