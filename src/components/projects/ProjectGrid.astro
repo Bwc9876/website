@@ -21,7 +21,9 @@ if (limitTo) {
 ---
 
 <div>
-  {entries.map((p) => <ProjectCard project={p} />)}
+  {entries.map((p) => (
+    <ProjectCard project={p} />
+  ))}
 </div>
 
 <style>

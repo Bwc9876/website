@@ -31,8 +31,8 @@ const blogPostsCollection = defineCollection({
     title: z.string(),
     date: z.date(),
     summary: z.string(),
-    cowsay: z.string()
-  })
+    cowsay: z.string(),
+  }),
 });
 ```
 
@@ -44,7 +44,7 @@ up and generate TS bindings for.
 
 ```ts
 export const collections = {
-  posts: blogPostsCollection
+  posts: blogPostsCollection,
 };
 ```
 
@@ -86,30 +86,28 @@ const blogEntries = await getCollection("posts");
 <Layout title="The Cowsay - Ben C's Blog">
   <h1>The Cowsay - Ben C's Blog</h1>
   <p>Here you'll find my blog posts, most recent first</p>
-  {
-    blogEntries.map((p, i) => (
-      <>
-        {i === 0 && <hr />}
-        <hgroup>
-          <h2>
-            <a href={`/blog/posts/${p.id}`}>{p.data.title}</a>
-          </h2>
-          <h3>
-            {p.data.date.toLocaleDateString("en-us", {
-              weekday: "long",
-              year: "numeric",
-              month: "short",
-              day: "numeric"
-            })}
-          </h3>
-        </hgroup>
-        <p>
-          {p.data.summary}&nbsp;&nbsp;<a href={`/blog/posts/${p.id}`}>Read More</a>
-        </p>
-        <hr />
-      </>
-    ))
-  }
+  {blogEntries.map((p, i) => (
+    <>
+      {i === 0 && <hr />}
+      <hgroup>
+        <h2>
+          <a href={`/blog/posts/${p.id}`}>{p.data.title}</a>
+        </h2>
+        <h3>
+          {p.data.date.toLocaleDateString("en-us", {
+            weekday: "long",
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </h3>
+      </hgroup>
+      <p>
+        {p.data.summary}&nbsp;&nbsp;<a href={`/blog/posts/${p.id}`}>Read More</a>
+      </p>
+      <hr />
+    </>
+  ))}
 </Layout>
 ```
 
@@ -125,7 +123,7 @@ export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
   return posts.map((entry) => ({
     params: { slug: entry.id },
-    props: { entry }
+    props: { entry },
   }));
 };
 
@@ -168,13 +166,11 @@ Then we need to map those to HTML
   <div>
     <span>On This Page</span>
     <ul>
-      {
-        headings.map((h) => (
-          <li>
-            <a href={`#${h.id}`}>{h.text}</a>
-          </li>
-        ))
-      }
+      {headings.map((h) => (
+        <li>
+          <a href={`#${h.id}`}>{h.text}</a>
+        </li>
+      ))}
     </ul>
   </div>
 </div>

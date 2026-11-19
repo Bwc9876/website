@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const renameEntries = await getCollection("projects");
   return renameEntries.map((entry) => ({
     params: { slug: entry.id },
-    props: { entry }
+    props: { entry },
   }));
 }
 const { entry } = Astro.props as { entry: CollectionEntry<"projects"> };
@@ -20,7 +20,7 @@ const restOther = entry.data.links?.other?.slice(1);
 
 const og = {
   src: entry.data.image,
-  alt: entry.data.name
+  alt: entry.data.name,
 };
 ---
 
@@ -32,47 +32,41 @@ const og = {
           {entry.data.name}
         </h1>
         <p transition:name={`project-tags-${entry.id}`}>
-          {entry.data.timespan.from}{entry.data.timespan.to && <> - {entry.data.timespan.to}</>},
-          {entry.data.tags.join(", ")}
+          {entry.data.timespan.from}
+          {entry.data.timespan.to && <> - {entry.data.timespan.to}</>},{entry.data.tags.join(", ")}
         </p>
       </div>
       <p transition:name={`project-summary-${entry.id}`}>{entry.data.summary}</p>
       <div class="ctas">
-        {
-          entry.data.links?.github && (
-            <span>
-              <a href={`https://github.com/${entry.data.links.github}`} role="button">
-                <Icon name="bi:github" /> GitHub
-              </a>
-            </span>
-          )
-        }
-        {
-          firstOtherLink && (
-            <span>
-              <a href={firstOtherLink.url} role="button" class="secondary">
-                <Icon name={`${firstOtherLink.iconPackOverride ?? "bi"}:${firstOtherLink.icon}`} />
-                {firstOtherLink.label}
-              </a>
-            </span>
-          )
-        }
+        {entry.data.links?.github && (
+          <span>
+            <a href={`https://github.com/${entry.data.links.github}`} role="button">
+              <Icon name="bi:github" /> GitHub
+            </a>
+          </span>
+        )}
+        {firstOtherLink && (
+          <span>
+            <a href={firstOtherLink.url} role="button" class="secondary">
+              <Icon name={`${firstOtherLink.iconPackOverride ?? "bi"}:${firstOtherLink.icon}`} />
+              {firstOtherLink.label}
+            </a>
+          </span>
+        )}
       </div>
       <div class="links">
-        {
-          restOther &&
-            restOther.map((l) => (
-              <span>
-                <IconLink
-                  icon={l.icon}
-                  overridePack={l.iconPackOverride}
-                  href={l.url}
-                  placement="bottom"
-                  label={l.label}
-                />
-              </span>
-            ))
-        }
+        {restOther &&
+          restOther.map((l) => (
+            <span>
+              <IconLink
+                icon={l.icon}
+                overridePack={l.iconPackOverride}
+                href={l.url}
+                placement="bottom"
+                label={l.label}
+              />
+            </span>
+          ))}
       </div>
     </div>
     <div class="img-container">

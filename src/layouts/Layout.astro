@@ -26,10 +26,10 @@ const og = {
   src: (
     await getImage({
       src: oldOg?.src ?? defaultOg,
-      format: "webp"
+      format: "webp",
     })
   ).src,
-  alt: oldOg?.alt ?? "Ben C's Profile Picture"
+  alt: oldOg?.alt ?? "Ben C's Profile Picture",
 };
 
 og.src = `${Astro.url.origin}${og.src}`;
@@ -74,8 +74,8 @@ const canonical = Astro.url.toString();
   <body id="top">
     <header class="container">
       <nav aria-label="Main navigation">
-        <a href="/"
-          ><Image
+        <a href="/">
+          <Image
             class="nav-icon"
             width={150}
             height={150}
@@ -85,7 +85,9 @@ const canonical = Astro.url.toString();
             alt=""
             src={cow}
           />
-          <span style="color: var(--text);"><span class="gradient-text">Bwc9876</span>.dev</span>
+          <span style="color: var(--text);">
+            <span class="gradient-text">Bwc9876</span>.dev
+          </span>
         </a>
         <span>
           <a href="/projects">Projects</a>

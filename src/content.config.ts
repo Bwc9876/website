@@ -11,7 +11,7 @@ const projectsCollection = defineCollection({
       tags: z.array(z.string()),
       timespan: z.object({
         from: z.number(),
-        to: z.number().or(z.string()).optional()
+        to: z.number().or(z.string()).optional(),
       }),
       internalSort: z.number().optional(),
       image: image(),
@@ -24,13 +24,13 @@ const projectsCollection = defineCollection({
                 label: z.string(),
                 url: z.string(),
                 icon: z.string().default("link-45deg"),
-                iconPackOverride: z.string().optional()
-              })
+                iconPackOverride: z.string().optional(),
+              }),
             )
-            .optional()
+            .optional(),
         })
-        .optional()
-    })
+        .optional(),
+    }),
 });
 
 const blogPostsCollection = defineCollection({
@@ -39,11 +39,11 @@ const blogPostsCollection = defineCollection({
     title: z.string(),
     date: z.date(),
     summary: z.string(),
-    cowsay: z.string()
-  })
+    cowsay: z.string(),
+  }),
 });
 
 export const collections = {
   projects: projectsCollection,
-  posts: blogPostsCollection
+  posts: blogPostsCollection,
 };

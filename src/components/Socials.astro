@@ -20,29 +20,27 @@ const socialData: SocialData = [
     name: "Tangled",
     icon: "dolly",
     overridePack: "local",
-    link: "https://tangled.org/did:plc:x7tlupbnqot7nu6udnffnv4h"
+    link: "https://tangled.org/did:plc:x7tlupbnqot7nu6udnffnv4h",
   },
   { name: "Bluesky", icon: "bluesky", link: "https://bsky.app/profile/bwc9876.dev" },
   { name: "PayPal", icon: "paypal", link: "https://paypal.me/bwc9876" },
-  { name: "GitHub", icon: "github", link: "https://github.com/Bwc9876" }
+  { name: "GitHub", icon: "github", link: "https://github.com/Bwc9876" },
 ];
 
 const { labelPlacement, makeLinksUnfocusable, ...rest } = Astro.props;
 ---
 
 <span {...rest}>
-  {
-    socialData.map((s) => (
-      <IconLink
-        icon={s.icon}
-        overridePack={s.overridePack}
-        href={s.link}
-        label={s.name}
-        placement={labelPlacement}
-        isExternal
-      />
-    ))
-  }
+  {socialData.map((s) => (
+    <IconLink
+      icon={s.icon}
+      overridePack={s.overridePack}
+      href={s.link}
+      label={s.name}
+      placement={labelPlacement}
+      isExternal
+    />
+  ))}
 </span>
 
 <style>

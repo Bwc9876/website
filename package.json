@@ -1,8 +1,8 @@
 {
   "name": "portfolio-site",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
-  "version": "0.0.0",
   "scripts": {
     "dev": "astro dev",
     "check": "astro check",
@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "oxfmt"
   },
   "dependencies": {
     "@astrojs/mdx": "^8.1.6",
@@ -36,8 +36,7 @@
   },
   "devDependencies": {
     "@types/sanitize-html": "^2.16.2",
-    "prettier": "^3.10.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "oxfmt": "^0.79.0"
   },
   "allowScripts": {
     "sharp@0.34.5": true,

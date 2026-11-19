@@ -3,10 +3,10 @@
 /* Breakpoint Queries, Using Bootstrap's */
 /* Smallest: 576px */
 
-@custom-media --sm (width >=576px);
-@custom-media --md (width >=768px);
-@custom-media --lg (width >=1200px);
-@custom-media --xl (width >=1700px);
+@custom-media --sm (width >= 576px);
+@custom-media --md (width >= 768px);
+@custom-media --lg (width >= 1200px);
+@custom-media --xl (width >= 1700px);
 
 .container {
   --gutter: var(--2);

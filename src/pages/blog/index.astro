@@ -10,25 +10,23 @@ const options: Intl.DateTimeFormatOptions = {
   weekday: "long",
   year: "numeric",
   month: "long",
-  day: "numeric"
+  day: "numeric",
 };
 ---
 
 <Layout title="Ben C's Blog">
   <h1 class="gradient-text">The Cowsay - Ben C's Blog</h1>
-  {
-    blogEntries.map((p) => (
-      <article>
-        <h2 transition:name={`blog-title-${p.id}`}>
-          <a href={`/blog/${p.id}`}>{p.data.title}</a>
-        </h2>
-        <p>{p.data.date.toLocaleDateString(undefined, options)}</p>
-        <p>
-          {p.data.summary}&nbsp;&nbsp;<a href={`/blog/${p.id}`}>Read More</a>
-        </p>
-      </article>
-    ))
-  }
+  {blogEntries.map((p) => (
+    <article>
+      <h2 transition:name={`blog-title-${p.id}`}>
+        <a href={`/blog/${p.id}`}>{p.data.title}</a>
+      </h2>
+      <p>{p.data.date.toLocaleDateString(undefined, options)}</p>
+      <p>
+        {p.data.summary}&nbsp;&nbsp;<a href={`/blog/${p.id}`}>Read More</a>
+      </p>
+    </article>
+  ))}
 </Layout>
 
 <style>
